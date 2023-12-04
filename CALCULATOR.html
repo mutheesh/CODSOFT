@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 200px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #calculator input {
+            grid-column: span 4;
+            padding: 20px;
+            font-size: 2em;
+            border: none;
+            text-align: right;
+            background-color: whitesmoke;
+            color: black;
+        }
+
+        #calculator button {
+            padding: 10px;
+            font-size: 2em;
+            border: none;
+            background-color:gray;
+            color: black;
+            border-radius: 5px;
+            
+        }#calculator button:hover {
+  background-color: rgb(245, 245, 240);
+}
+
+        #calculator button.equal {
+            background-color: #f0eceb;
+            color: rgb(8, 8, 8);
+        }#calculator button.equal:hover {
+  background-color: rgb(18, 18, 18);
+  color: white;
+}
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="display">
+        <button onclick="insert('1')">1</button>
+        <button onclick="insert('2')">2</button>
+        <button onclick="insert('3')">3</button>
+        <button onclick="insert('+')">+</button>
+        <button onclick="insert('4')">4</button>
+        <button onclick="insert('5')">5</button>
+        <button onclick="insert('6')">6</button>
+        <button onclick="insert('-')">-</button>
+        <button onclick="insert('7')">7</button>
+        <button onclick="insert('8')">8</button>
+        <button onclick="insert('9')">9</button>
+        <button onclick="insert('*')">*</button>
+        <button onclick="insert('0')">0</button>
+        <button onclick="clean()">C</button>
+        <button class="equal" onclick="equal()">=</button>
+        <button onclick="insert('/')">/</button>
+    </div>
+
+    <script type="text/javascript">
+        function insert(num) {
+            document.getElementById('display').value += num;
+        }
+        function equal() {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        }
+        function clean() {
+            document.getElementById('display').value = "";
+        }
+    </script>
+</body>
+</html>
+
+
